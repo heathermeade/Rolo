@@ -10,11 +10,6 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-            
             TabView {
                 NavigationStack {
                     //HomeView()
@@ -32,16 +27,16 @@ struct ContentView: View {
                     ContactView(contact: .sampleLinked())
                 }
                 .tabItem {
-                    Label("Contact", systemImage: "bubble.left.and.bubble.right")
+                    Label("Nudges", systemImage: "bubble.left.and.bubble.right")
                 }
                 NavigationStack {
                     //NudgesFeedView()
                 }
                 .tabItem {
-                    Label("Nudges", systemImage: "lightbulb")
+                    Label("Profile", systemImage: "person")
                 }
                 NavigationStack {
-                    //SettingsView()
+                    SettingsView()
                 }
                 .tabItem {
                     Label("Settings", systemImage: "gear")
