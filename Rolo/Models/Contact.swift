@@ -23,7 +23,7 @@ struct Contact: Identifiable, Codable, Equatable {
 extension Contact {
     static let sample = Contact(
         id: UUID(),
-        fullName: "Alice Johnson",
+        fullName: "Heather Meade",
         role: "Product Manager",
         company: "TechCorp",
         tags: ["AI", "Priority"],
