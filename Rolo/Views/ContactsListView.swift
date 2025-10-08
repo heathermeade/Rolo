@@ -102,9 +102,9 @@ private struct ContactCard: View {
                 }
 
                 Spacer(minLength: 8)
-                /* if let url = contact.linkedinURL {
+                if let url = contact.linkedinURL {
                     LinkedInBadge(url: url)
-                }*/
+                }
             }
 
             // Prompt bar- change later
@@ -147,6 +147,25 @@ private struct ProfilePictureView: View {
             .overlay(
                 Circle().stroke(Color.gray.opacity(0.3), lineWidth: 1)
             )
+    }
+}
+
+private struct LinkedInBadge: View {
+    let url: URL
+
+    var body: some View {
+        // Tapping only the badge opens LinkedIn; the rest of the card navigates to details.
+        Link(destination: url) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 4, style: .continuous)
+                    .fill(Color(red: 0.38, green: 0.40, blue: 0.43)) // LinkedIn gray tone
+                Text("in")
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundColor(.white)
+            }
+            .frame(width: 28, height: 28)
+        }
+        .buttonStyle(.plain)
     }
 }
 
